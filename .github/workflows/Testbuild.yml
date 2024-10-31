@@ -14,7 +14,4 @@ jobs:
         with: 
           dotnet-version: '8.0.10'
 
-      - name: build
-        run: | 
-          cd todo
-          dotnet build todo.csproj
+      
