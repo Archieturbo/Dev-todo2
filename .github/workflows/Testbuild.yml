@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: try to build
-        run: todo/Program.cs
+        run: todo/todo.csproj
