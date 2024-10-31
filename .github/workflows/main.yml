@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: ${{ github.event.repository.name }}
+    - run: ${{ github.event.Dev-todo2.name }}
