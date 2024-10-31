@@ -1,6 +1,9 @@
 name: TestBuild
 
-on: workflow_dispatch
+on:
+  push:
+    paths:
+      - '**/*.cs'
 
 
 jobs: 
