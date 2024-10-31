@@ -17,4 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Get current branch
-      run: GITHUB_REF_NAME
+      run: |
+        BRANCH_NAME=${GITHUB_REF_NAME}
+        echo "Branch name: $BRANCH_NAME"
+      
+     
