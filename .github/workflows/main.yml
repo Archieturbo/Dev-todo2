@@ -11,3 +11,10 @@ jobs:
       run: |
         REPO_NAME=${GITHUB_REPOSITORY##*/}
         echo "Repository Name: $REPO_NAME"
+        
+  print-currentbranch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Get current branch
+      run: GITHUB_REF_NAME
