@@ -2,3 +2,4 @@
 
 Console.WriteLine();
 Console.WriteLine("Hej MAdjid!!!!");
+Console.WriteLine("hej alla!");
