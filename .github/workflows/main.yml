@@ -7,4 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: ${{ github.event.Dev-todo2.name }}
+    - name: Get repository name only
+      run: |
+        REPO_NAME=${GITHUB_REPOSITORY##*/}
+        echo "Repository Name: $REPO_NAME"
