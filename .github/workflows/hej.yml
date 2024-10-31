@@ -3,7 +3,7 @@ name: TestBuild
 on:
   push:
     paths:
-      - 'Program.cs'
+      - '**/Program.cs'
 
 
 jobs: 
