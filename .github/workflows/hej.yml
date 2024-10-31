@@ -2,18 +2,13 @@ name: TestBuild
 
 on: workflow_dispatch
 
-jobs:
-  build:
+
+jobs: 
+  print-stuff:
     runs-on: ubuntu-latest
     steps:
-      - name: try to build
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - run: pwd
+    - name: List files
+      run: ls
 
-      - name: setup.dotnet
-        uses: actions/setup-dotnet@v4.1.0
-        with: 
-          dotnet-version: '8.0.10'
-      - name: build
-        run: | 
-          cd todo
-          dotnet build todo.csproj
