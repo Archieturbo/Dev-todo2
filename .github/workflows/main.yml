@@ -9,5 +9,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Get repository name only
       run: |
-        REPO_NAME=${GITHUB_REPOSITORY}
+        REPO_NAME=${GITHUB_REPOSITORY##*/}
         echo "Repository Name: $REPO_NAME"
