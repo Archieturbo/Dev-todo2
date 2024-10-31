@@ -1,0 +1,10 @@
+name: Dev tododemo
+
+on: workflow_dispatch
+
+jobs: 
+  print-reponame:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: pwd
