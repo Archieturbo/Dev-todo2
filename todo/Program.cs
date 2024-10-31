@@ -3,3 +3,4 @@
 Console.WriteLine();
 Console.WriteLine("Hej MAdjid!!!!");
 Console.WriteLine("hej alla!!!!!!!!!!!!!!orkar inteeeeee");
+Console.WriteLine("Simon testar");
