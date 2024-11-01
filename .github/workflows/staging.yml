@@ -20,4 +20,13 @@ jobs:
         dotnet-version: 8
     - name: build project
       run: cd todo; dotnet build
+    - name: publish project
+      run: cd todo; dotnet publish
+
+    - name: upload-artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: published-app
+        path: todo/bin/Release/net8.0/publish/
+    
         
