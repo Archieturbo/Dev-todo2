@@ -26,7 +26,7 @@ jobs:
     - name: upload-artifact
       uses: actions/upload-artifact@v3
       with:
-        name: todo/bin/Debug/net8.0/publish
-        path: home/runner/work/Dev-todo2/Dev-todo2/todo/bin/Release/net8.0/publish/
+        name: published-app
+        path: todo/bin/Release/net8.0/publish/
     
         
