@@ -24,7 +24,7 @@ jobs:
       run: cd todo; dotnet publish
 
     - name: upload-artifact
-      uses: action/upload-artifact@v4
+      uses: action/upload-artifact@v3
       with:
         name: publish-app
         path: todo/publish
