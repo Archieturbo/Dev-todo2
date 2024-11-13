@@ -8,15 +8,35 @@ on:
         required: true
         type: int
         default: '0'
-
+ 
+   
 
 jobs:
+#det här ett jobb
+  build:
+    runs-on: ${{ matrix.os }}
+    if: always()
+    strategy: 
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        version: [ 8.0, 7.0, 6.0 ]
+
+    steps:
+    - name: setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        version: ${{matrix.os}}
+        
+  # det här ett annat jobb
   build-project:
     runs-on: ubuntu-latest
+  
     env:
       passing_score: 7
       job_env_variabels: "this is jobs level enviroment variabel"
+   
     steps:
+     
       - name: steps that can fail
         env:
          step_Level_env: "this is step level env variabel"
@@ -29,9 +49,11 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: print jobs enviroment
+        if: always()
         run: echo "$job_env_variabels"
 
       - name: print steps enviroment
+        if: always()
         run: echo "$step_Level_env"
         
       - name: Build project
