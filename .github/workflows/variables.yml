@@ -13,12 +13,20 @@ on:
 jobs:
   build-project:
     runs-on: ubuntu-latest
+    env:
+      my_variabel: "this is my first try for env contex"
+      passing_score: 7
     steps: 
+      - name: print my env var
+        run: |
+          echo: "$my_variabel"
+          echo: "the input should not be higher than $passing_score "
+      
       - name: steps that can fail
         run: |
           echo "failcheck..."
           input_value=$(expr "${{ github.event.inputs.should_fail }}" + 0)
-          if [ "$input_value" -lt 7 ]; then
+          if [ "$input_value" -lt "$passing_score" ]; then
             exit 1
           fi
       - uses: actions/checkout@v4
