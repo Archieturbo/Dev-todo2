@@ -19,8 +19,8 @@ jobs:
     steps: 
       - name: print my env var
         run: |
-          echo: "$my_variabel"
-          echo: "the input should not be higher than $passing_score "
+          echo " custom variabel: $my_variabel"
+          echo "the input should not be higher than $passing_score "
       
       - name: steps that can fail
         run: |
