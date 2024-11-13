@@ -9,3 +9,11 @@ jobs:
     - uses: actions/checkout@v4
     - name: build project
       run: dotnet build
+
+  context:
+    runs-on: unbuntu-latest
+    steps:
+    - name: get github context info
+      run: echo ${{toJSON(github)}}
+    - name: get repo name
+      run: echo ${{github.repository}}
