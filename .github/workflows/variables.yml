@@ -14,15 +14,12 @@ jobs:
   build-project:
     runs-on: ubuntu-latest
     env:
-      my_variabel: "this is my first try for env contex"
       passing_score: 7
-    steps: 
-      - name: print my env var
-        run: |
-          echo " custom variabel: $my_variabel"
-          echo "the input should not be higher than $passing_score "
-      
+      job_env_variabels: "this is jobs level enviroment variabel"
+    steps:
       - name: steps that can fail
+        env:
+         step_Level_env: "this is step level env variabel"
         run: |
           echo "failcheck..."
           input_value=$(expr "${{ github.event.inputs.should_fail }}" + 0)
@@ -30,9 +27,21 @@ jobs:
             exit 1
           fi
       - uses: actions/checkout@v4
+      
+      - name: print jobs enviroment
+        run: echo "$job_env_variabels"
+
+      - name: print steps enviroment
+        run: echo "$step_Level_env"
+        
       - name: Build project
         run: dotnet build
+      
       - name: Get GitHub context info
         run: echo "${{ toJSON(github) }}"
+      
       - name: Get repository name
         run: echo "${{ github.repository }}" 
+
+
+  
