@@ -12,6 +12,7 @@ on:
    
 
 jobs:
+
 #det här ett jobb
   build:
     runs-on: ${{ matrix.os }}
@@ -26,6 +27,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         version: ${{matrix.os}}
+
         
   # det här ett annat jobb
   build-project:
