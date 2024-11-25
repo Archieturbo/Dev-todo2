@@ -10,4 +10,4 @@ jobs:
       with:
         dotnet-verion: 8
     - name: build-projekt
-      run: dotnet-build
+      run: dotnet build
