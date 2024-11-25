@@ -1,0 +1,9 @@
+name: testing from the DON
+on: workflow_dispatch
+jobs:
+  build-projekt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: build-projekt
+      run: dotnet build
