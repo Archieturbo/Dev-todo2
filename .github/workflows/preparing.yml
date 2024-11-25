@@ -5,9 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: setup .NET
-      uses: actions/checkout@v4.1.0
-      with:
-        dotnet-verion: 8
     - name: build-projekt
       run: dotnet build
